@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      ~ Copyright 2025 Ikuto-Akayama, All rights reserved.
+     -->
+    <string name="label_dialog_title">Title goes here</string>
+    <string name="label_dialog_subtitle">Secondary / text</string>
+    <string name="label_dialog_description">The title provides a clear and concise headline, while the subtitle offers additional context or a supporting statement. The description offers a more detailed explanation of the content, product, or feature being presented.</string>
+    <string name="label_dialog_extra_tag">Label</string>
+
+    <string name="label_action_button_yes">Yes, action button!</string>
+    <string name="label_action_button_no">No, action button!</string>
+</resources>
