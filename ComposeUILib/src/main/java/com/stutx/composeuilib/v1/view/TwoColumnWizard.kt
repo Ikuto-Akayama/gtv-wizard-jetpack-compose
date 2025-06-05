@@ -2,7 +2,7 @@
  * Copyright 2025 Ikuto-Akayama, All rights reserved.
  */
 
-package com.stutx.composeuilib.view
+package com.stutx.composeuilib.v1.view
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
@@ -20,10 +20,10 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.stutx.composeuilib.R
-import com.stutx.composeuilib.data.Action
-import com.stutx.composeuilib.data.TwoColumnWizardData
-import com.stutx.composeuilib.data.TwoColumnWizardExtra
-import com.stutx.composeuilib.viewmodel.ActionCallback
+import com.stutx.composeuilib.v1.data.Action
+import com.stutx.composeuilib.v1.data.TwoColumnWizardData
+import com.stutx.composeuilib.v1.data.TwoColumnWizardExtra
+import com.stutx.composeuilib.v1.viewmodel.ActionCallback
 
 @Composable
 fun TwoColumnWizard(

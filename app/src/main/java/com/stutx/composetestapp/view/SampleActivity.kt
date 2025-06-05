@@ -12,31 +12,45 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.ui.Modifier
 import com.stutx.composetestapp.R
 import com.stutx.composetestapp.view.ui.theme.ComposeTestAppTheme
-import com.stutx.composeuilib.data.Action
-import com.stutx.composeuilib.data.TwoColumnWizardData
-import com.stutx.composeuilib.view.TwoColumnWizard
-import com.stutx.composeuilib.viewmodel.ActionCallback
+import com.stutx.composeuilib.v2.data.Action
+import com.stutx.composeuilib.v2.data.ActionRaw
+import com.stutx.composeuilib.v2.data.ActionRes
+import com.stutx.composeuilib.v2.data.TextContentsRaw
+import com.stutx.composeuilib.v2.view.TwoColumnWizard
+import com.stutx.composeuilib.v2.viewmodel.ActionCallback
 
 class SampleActivity : ComponentActivity() {
 
     private val callback = object : ActionCallback {
-        override fun onSelected(id: Int) {
+        override fun onSelected(action: Action) {
             val context = this@SampleActivity.applicationContext
             Toast.makeText(
                 context,
-                "${context.getText(id)} is selected",
+                "${action.id} is selected.",
                 Toast.LENGTH_SHORT
             ).show()
         }
     }
 
     private val actionList = listOf(
-        Action(R.string.label_action_button_1),
-        Action(
+        ActionRes(
+            id = 0,
+            title = R.string.label_action_button_1),
+        ActionRes(
+            id = 1,
             title = R.string.label_action_button_2,
             icon = com.stutx.composeuilib.R.drawable.baseline_arrow_right_24
         ),
-        Action(R.string.label_action_button_3)
+        ActionRes(
+            id = 2,
+            title = R.string.label_action_button_3
+        ),
+        ActionRaw(
+            id = 3,
+            title = "Action Button 4",
+            subtitle = "This is raw version",
+            icon = com.stutx.composeuilib.R.drawable.baseline_arrow_right_24
+        )
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,15 +59,14 @@ class SampleActivity : ComponentActivity() {
         setContent {
             ComposeTestAppTheme {
                 TwoColumnWizard(
-                    modifier = Modifier,
-                    data = TwoColumnWizardData(
-                        title = R.string.label_title_activity_sample,
-                        subtitle = R.string.label_subtitle_activity_sample,
-                        description = R.string.label_description_activity_sample,
-                        extra = null
+                    contents = TextContentsRaw(
+                        title = "test title",
+                        subtitle = "test subtitle",
+                        description = "this is description!!!! toooooooooooooooooooooooo long text can set this. also line break is automatically",
                     ),
-                    callback = callback,
-                    actions = actionList
+                    actions = actionList,
+                    actionCallback = callback,
+                    modifier = Modifier
                 )
             }
         }

@@ -2,7 +2,7 @@
  * Copyright 2025 Ikuto-Akayama, All rights reserved.
  */
 
-package com.stutx.composeuilib.view
+package com.stutx.composeuilib.v1.view
 
 import android.content.res.Configuration
 import androidx.annotation.DrawableRes
