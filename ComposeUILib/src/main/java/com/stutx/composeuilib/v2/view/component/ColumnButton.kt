@@ -46,17 +46,17 @@ fun ColumnButtons(
         modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(12.dp, Alignment.Top),
     ) {
-        val focusIndex =
+        val focusId =
             actions.find { it.id == initialFocusId }?.id
                 ?: actions.firstOrNull()?.id
-        actions.forEachIndexed { index, action ->
+        actions.forEach { action ->
             val focusRequester = remember { FocusRequester() }
             ActionButtonV2(
                 action = action,
                 actionCallback = actionCallback,
                 focusRequester = focusRequester
             )
-            if (focusIndex == action.id) {
+            if (focusId == action.id) {
                 LaunchedEffect(Unit) { focusRequester.requestFocus() }
             }
         }
@@ -107,7 +107,6 @@ internal fun ActionButtonV2(
                 ActionTextsV2(
                     action = action,
                     modifier = modifier
-
                 )
             }
         }
