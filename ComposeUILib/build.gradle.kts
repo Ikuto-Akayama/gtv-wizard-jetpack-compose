@@ -39,20 +39,19 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
 
-    /** Jetpack compose */
     // Material Design 3
     implementation(libs.androidx.material3)
-    // Android Studio Preview support
     implementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.tooling.preview)
 
-    androidTestImplementation(libs.androidx.ui.test.junit4)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.runtime)
+
+    // Android Studio Preview support
+    debugImplementation(libs.androidx.ui.tooling.preview)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    // optional
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.runtime.livedata)
-
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.ui.test.junit4)
 }

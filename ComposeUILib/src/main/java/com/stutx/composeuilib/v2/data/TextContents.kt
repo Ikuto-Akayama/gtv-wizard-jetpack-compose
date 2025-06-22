@@ -8,20 +8,20 @@ import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 
-sealed class TextContents {
+interface TextContents {
     @Composable
-    abstract fun getTitle(): String?
+    fun getTitle(): String?
     @Composable
-    abstract fun getSubtitle(): String?
+    fun getSubtitle(): String?
     @Composable
-    abstract fun getDescription(): String?
+    fun getDescription(): String?
 }
 
 data class TextContentsRes(
     @StringRes val title: Int? = null,
     @StringRes val subtitle: Int? = null,
     @StringRes val description: Int? = null,
-) : TextContents() {
+) : TextContents {
     @Composable
     override fun getTitle(): String? {
         return title?.let {
@@ -49,7 +49,7 @@ data class TextContentsRaw(
     val title: String? = null,
     val subtitle: String? = null,
     val description: String? = null,
-) : TextContents() {
+) : TextContents {
     @Composable
     override fun getTitle(): String? = title
 
