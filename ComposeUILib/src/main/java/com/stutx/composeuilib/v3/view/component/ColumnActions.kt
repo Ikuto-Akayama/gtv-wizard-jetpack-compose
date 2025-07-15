@@ -6,7 +6,8 @@ package com.stutx.composeuilib.v3.view.component
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -49,11 +50,13 @@ private fun ColumnComposableActions(
 ) {
     val focusId = actions.find { it.id == initialFocus }?.id
         ?: actions.firstOrNull()?.id
-    Column(
+    LazyColumn(
         modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(12.dp, Alignment.Top),
+        contentPadding = PaddingValues(all = 15.dp),
     ) {
-        actions.forEach { action ->
+        items(actions.size) { index ->
+            val action = actions[index]
             val focusRequester = remember { FocusRequester() }
             ComposableAction(action, listener, focusRequester, modifier)
             if (focusId == action.id) {

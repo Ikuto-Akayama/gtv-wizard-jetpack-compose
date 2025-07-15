@@ -43,7 +43,6 @@ fun TwoColumnWizard(
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
             modifier = modifier
-                .padding(15.dp) // FIXME: This is workaround.
                 .width(700.dp)
                 .wrapContentHeight(Alignment.CenterVertically)
         ) {
