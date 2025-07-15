@@ -146,6 +146,11 @@ private val Typography = Typography(
         lineBreak = customLineBreak,
     ),
     titleMedium = TextStyle.Default.copy(
-        lineBreak = customLineBreak
+        fontFamily = FontFamily.SansSerif,
+        fontWeight = FontWeight.Medium,
+        fontSize = 16.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.2.sp,
+        lineBreak = customLineBreak,
     )
 )
