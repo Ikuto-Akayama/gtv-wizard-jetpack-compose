@@ -28,6 +28,11 @@ class SampleActionsViewModel() : ActionsViewModel() {
                 ActionRaw(
                     id = 2,
                     title = "Button3"
+                ),
+                ActionRaw(
+                    id = 3,
+                    title = "あなたに寄り添う最先端のテクノロジー。",
+                    subtitle = "更新内容を確認する"
                 )
             )
         )
