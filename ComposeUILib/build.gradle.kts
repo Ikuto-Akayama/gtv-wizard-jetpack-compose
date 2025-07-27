@@ -40,18 +40,21 @@ dependencies {
     implementation(libs.androidx.core.ktx)
 
     // Material Design 3
-    implementation(libs.androidx.material3)
-    implementation(libs.androidx.ui.tooling)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.runtime)
+    implementation(libs.androidx.compose.animation.graphics)
+
+    implementation(libs.androidx.compose.ui.tooling)
 
     implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.runtime)
+    implementation(libs.kotlinx.coroutines.android)
 
     // Android Studio Preview support
-    debugImplementation(libs.androidx.ui.tooling.preview)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    debugImplementation(libs.androidx.compose.ui.tooling.preview)
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
 
     testImplementation(libs.junit)
 
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
 }

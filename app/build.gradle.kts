@@ -42,14 +42,14 @@ dependencies {
 
     implementation(project(":ComposeUILib"))
 
-    implementation(libs.androidx.material3)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.runtime)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.runtime)
 
     // Android Studio Preview support
-    debugImplementation(libs.androidx.ui.tooling.preview)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    debugImplementation(libs.androidx.compose.ui.tooling.preview)
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
 
-    androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
 }
