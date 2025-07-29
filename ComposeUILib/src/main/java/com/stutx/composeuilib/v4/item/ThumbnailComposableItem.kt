@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import com.stutx.composeuilib.R
-import com.stutx.composeuilib.v4.widget.WidgetBuilderBase
+import com.stutx.composeuilib.v4.widget.BaseWidgetBuilder
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
@@ -59,7 +59,7 @@ sealed class ThumbnailComposableItem : ComposableItem {
 )
 @Composable
 fun PreviewThumbnailComposableItem() {
-    WidgetBuilderBase.Compose(
+    BaseWidgetBuilder.Compose(
         modifier = Modifier,
         items = listOf(
             ThumbnailComposableItem.ImageComposableItem(resId = R.drawable.baseline_arrow_right_24),

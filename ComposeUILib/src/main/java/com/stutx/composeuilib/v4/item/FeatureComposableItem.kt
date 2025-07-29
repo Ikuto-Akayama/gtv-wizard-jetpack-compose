@@ -21,7 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.stutx.composeuilib.R
-import com.stutx.composeuilib.v4.widget.WidgetBuilderBase
+import com.stutx.composeuilib.v4.widget.BaseWidgetBuilder
 
 data class FeatureComposableItem(
     val thumbnail: ThumbnailComposableItem,
@@ -36,7 +36,7 @@ data class FeatureComposableItem(
 )
 @Composable
 fun PreviewFeatureComposableItem() {
-    WidgetBuilderBase.Compose(
+    BaseWidgetBuilder.Compose(
         modifier = Modifier,
         items = listOf(
             FeatureComposableItem(

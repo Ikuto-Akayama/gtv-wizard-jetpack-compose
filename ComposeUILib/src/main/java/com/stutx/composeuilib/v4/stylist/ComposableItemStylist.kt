@@ -4,14 +4,15 @@
 
 package com.stutx.composeuilib.v4.stylist
 
-import com.stutx.composeuilib.v4.widget.WidgetBuilder
-import com.stutx.composeuilib.v4.widget.WidgetBuilderBase
+import androidx.compose.runtime.Composable
+import com.stutx.composeuilib.v4.item.ComposableItem
+import kotlinx.coroutines.flow.MutableStateFlow
 
 /**
  * ComposableItemStylist is a stylist for Composable items.
  */
-class ComposableItemStylist(
-    private val builder: WidgetBuilder = WidgetBuilderBase
-) {
+interface ComposableItemStylist {
 
+    @Composable
+    fun Compose()
 }
